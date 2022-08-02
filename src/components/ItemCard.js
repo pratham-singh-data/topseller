@@ -2,12 +2,13 @@ import { Button, Card, CardContent, CardHeader, CardMedia, Typography } from '@m
 import { Box } from '@mui/system'
 import React from 'react'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import NoImageFound from "../assets/no_image_found.jpg";
 
 export const ItemCard = ({data}) => {
   return (
     <Card sx={{width: {sm: "30%", xs: "100%"}, marginLeft: {md: "20px", xs: "0px"}, marginBottom: "20px"}}>
         <CardHeader title={data.title} subheader={data.category.name}/>
-        <CardMedia component="img" image={data.images[0]} height="200px"/>
+        <CardMedia component="img" image={data.images[0] ? data.images[0] : NoImageFound} height="200px"/>
         <CardContent>
             <Typography>{data.description}</Typography>
 

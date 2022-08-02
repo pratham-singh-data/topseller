@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import React from 'react'
-import { Navigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
