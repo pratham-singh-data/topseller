@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Topseller: Demo E-Commerce Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project was made by enhancing the final submission of the React Training project given by Internshala, the Platzi Fake Store API was used instead of their provided assets due to the extremely low length of the dataset provided by Internshala.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. Full webapp is responsive and built using MaterialUI and React.
 
-### `npm start`
+2. Webapp allows the user to filter through all the entries as per their desired categories of data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. The API is only called twice at each rendering of the home page and the data is stored locally from there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Cart state is persisted through the use of localStorage.
 
-### `npm test`
+5. Application consists of two pages, Home and Cart. User can navigate to the Cart page by pressing the Cart button in the header and to the Home page by pressing the logo which is also present in the header.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Cart shows all the items selected by the user, allows them to add, remove or delete items. Same choices are offered on the Home page by the Item cards.
 
-### `npm run build`
+## Attributions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. `Internshala` : The project inspired by them. This is a modification of the suggested final project of the React Training course. (https://trainings.internshala.com)
+2. `Platzi Fake Store API` : This was the API used to get data being displayed on this webapp. (https://fakeapi.platzi.com/)
+3. `Freepik` : logo512.png image was given by them. (https://www.flaticon.com/authors/freepik)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
+Application is deployed at:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://pratham-singh-data.github.io/topseller/
 
-### `npm run eject`
+## Source Code
+Source Code is present at:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://github.com/pratham-singh-data/topseller
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact Details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Name: Pratham Singh
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+E Mail: PrathamSinghCE@gmail.com
 
-## Learn More
+## Note
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+no_image_found.jpg was found through a general google search and I was unable to find its creator, if they wish to be attributed, please mail me via the given mail ID.
