@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Cart } from '../pages/Cart'
 import { HomePage } from '../pages/HomePage'
@@ -7,10 +7,22 @@ import { Header } from './Header'
 
 export const MainPageLayout = () => {
   const [cart, setCart] = useState(getCart());
+  const [cartItems, setCartItems] = useState(0);
+  
+  useEffect(() => {
+    let total = 0;
+
+    for(const id in cart){
+      if(! cart[id]) continue;
+      total += cart[id].count;
+    }
+
+    setCartItems(total);
+  }, [cart])
 
   return (
     <>
-        <Header/>
+        <Header cartItems={cartItems}/>
 
         <Routes>
             <Route path="/" element={<HomePage cart={cart} setCart={setCart} />}/>
