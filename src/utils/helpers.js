@@ -1,5 +1,8 @@
-export const getData = async ({setFullData}) => {
-    const data = await fetch("https://api.escuelajs.co/api/v1/products").then(res => res.json()).catch(err => alert(err.message))
+export const getData = async ({setFullData, setIsDataLoading}) => {
+    const data = await fetch("https://api.escuelajs.co/api/v1/products").then(res => res.json()).catch(err => {
+        alert(err.message);
+        setIsDataLoading(false);
+    })
     setFullData(data);
 }
 

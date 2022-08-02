@@ -14,7 +14,7 @@ export const HomePage = ({cart, setCart}) => {
   const [isCategoryLoading, setIsCategoryLoading] = useState(true);
 
   useEffect(() => {
-    getData({setFullData: setFullData});
+    getData({setFullData: setFullData, setIsDataLoading: setIsDataLoading});
     getCategories({setCategories: setCategories, setIsCategoryLoading: setIsCategoryLoading});
   }, [])
 

@@ -26,7 +26,7 @@ export const MainPageLayout = () => {
 
         <Routes>
             <Route path="/" element={<HomePage cart={cart} setCart={setCart} />}/>
-            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} cartItems={cartItems} />}/>
         </Routes>
     </>
   )
