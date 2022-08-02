@@ -65,14 +65,14 @@ export const ItemCard = ({data, cart, setCart}) => {
             {cart[data.id] && 
             <Box>
                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                  <IconButton onClick={removeItemHandler}>
+                  <IconButton sx={{"&:hover": {color: "#d32f2f"}}} onClick={removeItemHandler}>
                     <RemoveIcon/>
                   </IconButton>
 
                   <Typography>{cart[data.id].count}</Typography>
 
-                  <IconButton onClick={addItemHandler}>
-                    <AddIcon/>
+                  <IconButton sx={{"&:hover": {color: "#2e7d32"}}} onClick={addItemHandler}>
+                    <AddIcon />
                   </IconButton>
                 </Box>
 

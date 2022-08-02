@@ -65,15 +65,15 @@ export const BillItem = ({data, cart, setCart}) => {
 
         <Box>
             <CardContent sx={{display: "flex", flexDirection: "column"}}>
-                <IconButton onClick={addItemHandler}>
+                <IconButton sx={{"&:hover": {color: "#2e7d32"}}} onClick={addItemHandler}>
                    <AddIcon/>
                 </IconButton>
 
-                <IconButton onClick={removeHandler}>
+                <IconButton sx={{"&:hover": {color: "#d32f2f"}}} onClick={removeHandler}>
                    <DeleteIcon/>
                 </IconButton>
 
-                <IconButton onClick={removeItemHandler}>
+                <IconButton sx={{"&:hover": {color: "#d32f2f"}}} onClick={removeItemHandler}>
                    <RemoveIcon/>
                 </IconButton>
             </CardContent>
