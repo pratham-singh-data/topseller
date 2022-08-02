@@ -8,3 +8,7 @@ export const getCategories = async ({setCategories, setIsCategoryLoading}) => {
     setCategories(data);
     setIsCategoryLoading(false);
 }
+
+export const getCart = () => {
+    return {};
+}

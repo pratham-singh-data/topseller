@@ -5,7 +5,7 @@ import { CategoriesCarousel } from '../components/CategoriesCarousel';
 import { ItemList } from '../components/ItemList';
 import { getCategories, getData } from '../utils/helpers';
 
-export const HomePage = () => {
+export const HomePage = ({cart, setCart}) => {
   const [fullData, setFullData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filter, setFilter] = useState(null);
@@ -45,7 +45,7 @@ export const HomePage = () => {
       <CategoriesCarousel categories={categories} setFilter={setFilter} setIsLoading={setIsDataLoading} isLoading={isCategoryLoading}/>
 
       <Typography variant="h5" sx={{my: "10px", mx: "20px", fontWeight: "bolder", color: "#ffffff"}}>Results:</Typography>
-      <ItemList data={data} isLoading={isDataLoading} />
+      <ItemList data={data} isLoading={isDataLoading} cart={cart} setCart={setCart} />
     </main>
   )
 }
