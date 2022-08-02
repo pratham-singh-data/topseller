@@ -1,7 +1,11 @@
+import { CssBaseline } from "@mui/material";
+import { MainPageLayout } from "./components/MainPageLayout";
+
 function App() {
   return (
     <div className="App">
-      App
+      <CssBaseline/>
+      <MainPageLayout/>
     </div>
   );
 }
