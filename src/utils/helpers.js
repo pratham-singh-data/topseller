@@ -14,7 +14,10 @@ export const getCategories = async ({setCategories, setIsCategoryLoading}) => {
     setIsCategoryLoading(false);
 }
 
-// get initial cart data from LocalStorage and if unavailable returns an empty object
+// get initial cart data from localStorage and if unavailable returns an empty object
 export const getCart = () => {
-    return {};
+    const lastData = localStorage.getItem("topseller_cart");
+    
+    if(! lastData) return {};
+    return JSON.parse(lastData);
 }

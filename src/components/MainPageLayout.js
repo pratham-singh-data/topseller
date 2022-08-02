@@ -9,8 +9,9 @@ export const MainPageLayout = () => {
   const [cart, setCart] = useState(getCart());
   const [cartItems, setCartItems] = useState(0);
   
-  // this updates the total item in cart when value of cart changes
+  // this updates the total item in cart when value of cart changes also cart is added to localStorage
   useEffect(() => {
+    localStorage.setItem("topseller_cart", JSON.stringify(cart));
     let total = 0;
 
     for(const id in cart){
