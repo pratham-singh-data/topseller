@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/topseller/static/js/main.1c05ee99.js",
+    "static/media/no_image_found.jpg": "/topseller/static/media/no_image_found.33fe458de2af63430ea0.jpg",
+    "index.html": "/topseller/index.html",
+    "main.1c05ee99.js.map": "/topseller/static/js/main.1c05ee99.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.1c05ee99.js"
+  ]
+}
