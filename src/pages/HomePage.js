@@ -13,6 +13,7 @@ export const HomePage = ({cart, setCart}) => {
   const [isDataLoading, setIsDataLoading] = useState(true);
   const [isCategoryLoading, setIsCategoryLoading] = useState(true);
 
+  // call to API only happens twice on each render of homepage
   useEffect(() => {
     getData({setFullData: setFullData, setIsDataLoading: setIsDataLoading});
     getCategories({setCategories: setCategories, setIsCategoryLoading: setIsCategoryLoading});
@@ -21,12 +22,14 @@ export const HomePage = ({cart, setCart}) => {
   useEffect(() => {
     if(! filter){
       setData(fullData);
+      // make sure this is not at first load
       if(fullData && fullData.length !== 0) setIsDataLoading(false);
       return;
     }
 
     const filteredData = fullData.filter(data => data.category.id === filter);
     setData(filteredData);
+    // just to be sure
     if(fullData && fullData.length !== 0) setIsDataLoading(false);
   }, [fullData, filter]);
 

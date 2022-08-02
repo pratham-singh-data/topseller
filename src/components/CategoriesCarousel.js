@@ -8,6 +8,7 @@ export const CategoriesCarousel = ({categories, setFilter, isLoading, setIsLoadi
     <Box sx={{overflow: "scroll", display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
         {isLoading && <CircularProgress color="success" /> }
 
+        {/* categories could be undefined or empty */}
         {!isLoading && (!categories || categories.length === 0) && <EmptyComponent/>}
 
         {!isLoading && categories && (

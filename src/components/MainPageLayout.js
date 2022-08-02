@@ -9,6 +9,7 @@ export const MainPageLayout = () => {
   const [cart, setCart] = useState(getCart());
   const [cartItems, setCartItems] = useState(0);
   
+  // this updates the total item in cart when value of cart changes
   useEffect(() => {
     let total = 0;
 

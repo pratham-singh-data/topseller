@@ -6,8 +6,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export const BillItem = ({data, cart, setCart}) => {
-    console.log(data)
-
+    // handle sets all values as they were before but the data at index data.id is set to null
     const removeHandler = () => {
         setCart({
           ...cart,
@@ -15,6 +14,7 @@ export const BillItem = ({data, cart, setCart}) => {
         })
     }
 
+    // handler sets all value as is except the data at data.id whose count is incremented.
     const addItemHandler = () => {
         setCart({
           ...cart,
@@ -25,6 +25,8 @@ export const BillItem = ({data, cart, setCart}) => {
         })
     }
 
+    // handler sets all values as is except the data at data.ifd which is decremented
+    // here if the count is 1, last decrement will just delete the element from the object
     const removeItemHandler = () => {
         if(cart[data.id].count === 1){
           removeHandler();
