@@ -1,11 +1,11 @@
-import { Button, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { useEffect, useState } from 'react'
-import { CategoriesCarousel } from '../components/CategoriesCarousel';
-import { ItemList } from '../components/ItemList';
-import { getCategories, getData } from '../utils/helpers';
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import React, { useEffect, useState } from "react";
+import { CategoriesCarousel } from "../components/CategoriesCarousel";
+import { ItemList } from "../components/ItemList";
+import { getCategories, getData } from "../utils/helpers";
 
-export const HomePage = ({cart, setCart}) => {
+export const HomePage = ({ cart, setCart }) => {
   const [fullData, setFullData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filter, setFilter] = useState(null);
@@ -15,40 +15,82 @@ export const HomePage = ({cart, setCart}) => {
 
   // call to API only happens twice on each render of homepage
   useEffect(() => {
-    getData({setFullData: setFullData, setIsDataLoading: setIsDataLoading});
-    getCategories({setCategories: setCategories, setIsCategoryLoading: setIsCategoryLoading});
-  }, [])
+    getData({ setFullData: setFullData, setIsDataLoading: setIsDataLoading });
+    getCategories({
+      setCategories: setCategories,
+      setIsCategoryLoading: setIsCategoryLoading,
+    });
+  }, []);
 
   useEffect(() => {
-    if(! filter){
+    if (!filter) {
       setData(fullData);
       // make sure this is not at first load
-      if(fullData && fullData.length !== 0) setIsDataLoading(false);
+      if (fullData && fullData.length !== 0) setIsDataLoading(false);
       return;
     }
 
-    const filteredData = fullData.filter(data => data.category.id === filter);
+    const filteredData = fullData.filter((data) => data.category.id === filter);
     setData(filteredData);
     // just to be sure
-    if(fullData && fullData.length !== 0) setIsDataLoading(false);
+    if (fullData && fullData.length !== 0) setIsDataLoading(false);
   }, [fullData, filter]);
 
   return (
     <main>
-      <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "10px", px: "20px"}}>
-        <Typography variant="h5" sx={{fontWeight: "bolder", color: "#ffffff"}}>Categories:</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: "10px",
+          px: "20px",
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bolder", color: "#ffffff" }}
+        >
+          Categories:
+        </Typography>
 
-        <Button sx={{backgroundColor: "#98ca3f", color: "#121f3d", "&:hover": {backgroundColor: "#121f3d", color: "#98ca3f", border: "1px solid #98ca3f"}}} onClick={() => {
-          setIsDataLoading(true);
-          setFilter(null)
-        }}>
+        <Button
+          sx={{
+            backgroundColor: "#98ca3f",
+            color: "#121f3d",
+            "&:hover": {
+              backgroundColor: "#121f3d",
+              color: "#98ca3f",
+              border: "1px solid #98ca3f",
+            },
+          }}
+          onClick={() => {
+            setIsDataLoading(true);
+            setFilter(null);
+          }}
+        >
           Reset
         </Button>
       </Box>
-      <CategoriesCarousel categories={categories} setFilter={setFilter} setIsLoading={setIsDataLoading} isLoading={isCategoryLoading}/>
+      <CategoriesCarousel
+        categories={categories}
+        setFilter={setFilter}
+        setIsLoading={setIsDataLoading}
+        isLoading={isCategoryLoading}
+      />
 
-      <Typography variant="h5" sx={{my: "10px", mx: "20px", fontWeight: "bolder", color: "#ffffff"}}>Results:</Typography>
-      <ItemList data={data} isLoading={isDataLoading} cart={cart} setCart={setCart} />
+      <Typography
+        variant="h5"
+        sx={{ my: "10px", mx: "20px", fontWeight: "bolder", color: "#ffffff" }}
+      >
+        Results:
+      </Typography>
+      <ItemList
+        data={data}
+        isLoading={isDataLoading}
+        cart={cart}
+        setCart={setCart}
+      />
     </main>
-  )
-}
+  );
+};
